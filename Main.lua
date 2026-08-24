@@ -64,6 +64,13 @@ end
 local function UpdateApplicantMember(member, applicantID, memberIndex)
     if not member then return end
 
+    -- Blizzard moves the left edge of Name when friend or leaver icons appear.
+    -- Keep its right edge fixed and reserve the end of the Name column for us.
+    if member.Name then
+        member.Name:ClearPoint("RIGHT")
+        member.Name:SetPoint("RIGHT", member, "LEFT", 66, 0)
+    end
+
     if not LFGRegionDB.showApplicants then
         if member.LFGRegionBadge then member.LFGRegionBadge:Hide() end
         return
@@ -78,11 +85,7 @@ local function UpdateApplicantMember(member, applicantID, memberIndex)
     local badge = member.LFGRegionBadge
     if not badge then
         badge = CreateBadge(member)
-        if member.Name then
-            badge:SetPoint("RIGHT", member.Name, "LEFT", -4, 0)
-        else
-            badge:SetPoint("RIGHT", member, "RIGHT", -7, 0)
-        end
+        badge:SetPoint("LEFT", member, "LEFT", 70, 0)
         member.LFGRegionBadge = badge
     end
 
