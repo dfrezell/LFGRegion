@@ -4,8 +4,8 @@
 
 ### Added
 
-- Region badges for Premade Group search-result leaders
-- Region badges for applicants to the player's listed group
+- Colored region text beside the playstyle label for Premade Group search-result leaders
+- Colored region text for applicants to the player's listed group
 - Americas realm mappings for Oceanic, US time zones, Mexico, and Brazil
 - Slash commands to toggle leader and applicant badges
 - Compatibility API for integrations using `PremadeRegions`

@@ -13,19 +13,14 @@ local function Print(message)
 end
 
 local function CreateBadge(parent)
-    local badge = CreateFrame("Frame", nil, parent, "BackdropTemplate")
+    local badge = CreateFrame("Frame", nil, parent)
     badge:SetSize(29, 14)
     badge:SetFrameLevel(parent:GetFrameLevel() + 5)
-    badge:SetBackdrop({
-        bgFile = "Interface\\Buttons\\WHITE8X8",
-        edgeFile = "Interface\\Buttons\\WHITE8X8",
-        edgeSize = 1,
-    })
-    badge:SetBackdropBorderColor(0, 0, 0, 0.9)
 
     badge.text = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    badge.text:SetPoint("CENTER", 0, 0)
-    badge.text:SetTextColor(1, 1, 1)
+    badge.text:SetPoint("LEFT", 0, 0)
+    badge.text:SetShadowOffset(1, -1)
+    badge.text:SetShadowColor(0, 0, 0, 1)
 
     return badge
 end
@@ -37,8 +32,8 @@ function LFGRegion:SetBadge(badge, playerName)
         return
     end
 
-    badge:SetBackdropColor(info.color[1], info.color[2], info.color[3], 0.95)
     badge.text:SetText(info.label)
+    badge.text:SetTextColor(info.color[1], info.color[2], info.color[3])
     badge:Show()
 end
 
@@ -59,7 +54,7 @@ local function UpdateSearchEntry(entry)
     local badge = entry.LFGRegionBadge
     if not badge then
         badge = CreateBadge(entry)
-        badge:SetPoint("RIGHT", entry, "RIGHT", -7, 0)
+        badge:SetPoint("LEFT", entry.Playstyle, "RIGHT", 7, 0)
         entry.LFGRegionBadge = badge
     end
 
