@@ -1,0 +1,8 @@
+package-as: LFGRegion
+
+ignore:
+  - .git
+  - .github
+  - .gitignore
+  - AGENTS.md
+  - README.md
