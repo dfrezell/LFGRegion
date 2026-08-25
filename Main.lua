@@ -53,6 +53,7 @@ local function UpdateSearchEntry(entry)
 
     local badge = entry.LFGRegionBadge
     if not badge then
+        if not entry.Playstyle then return end
         badge = CreateBadge(entry)
         badge:SetPoint("LEFT", entry.Playstyle, "RIGHT", 7, 0)
         entry.LFGRegionBadge = badge
@@ -64,13 +65,6 @@ end
 local function UpdateApplicantMember(member, applicantID, memberIndex)
     if not member then return end
 
-    -- Blizzard moves the left edge of Name when friend or leaver icons appear.
-    -- Keep its right edge fixed and reserve the end of the Name column for us.
-    if member.Name then
-        member.Name:ClearPoint("RIGHT")
-        member.Name:SetPoint("RIGHT", member, "LEFT", 66, 0)
-    end
-
     if not LFGRegionDB.showApplicants then
         if member.LFGRegionBadge then member.LFGRegionBadge:Hide() end
         return
@@ -80,6 +74,15 @@ local function UpdateApplicantMember(member, applicantID, memberIndex)
     if not name then
         if member.LFGRegionBadge then member.LFGRegionBadge:Hide() end
         return
+    end
+
+    -- Blizzard moves the left edge of Name when friend or leaver icons appear.
+    -- Keep its right edge fixed and reserve the end of the Name column for us.
+    -- Only done when we're actually going to show a badge, so the column
+    -- keeps its full Blizzard-default width while applicant badges are off.
+    if member.Name then
+        member.Name:ClearPoint("RIGHT")
+        member.Name:SetPoint("RIGHT", member, "LEFT", 66, 0)
     end
 
     local badge = member.LFGRegionBadge

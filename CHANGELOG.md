@@ -10,5 +10,8 @@
 - Slash commands to toggle leader and applicant badges
 - Compatibility API for integrations using `PremadeRegions`
 - Refactor Regions and correct servers.
+- Fix Applicants toggle and reserved spacing.
+- Check Playstyle anchor first.
+- Fix MEX to LTN change.
 
 [1.0.0]: https://github.com/dfrezell/LFGRegion/releases/tag/v1.0.0

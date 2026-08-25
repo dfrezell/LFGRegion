@@ -11,7 +11,7 @@ The addon currently supports realms in the Americas game region:
 - US Mountain (`USM`)
 - US Central (`USC`)
 - US East (`USE`)
-- Mexico (`MEX`)
+- Latin America (`LTN`)
 - Brazil (`BZL`)
 
 Unknown realms are left unmarked. Other global game regions are not currently supported.
