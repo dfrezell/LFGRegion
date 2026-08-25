@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0] - 2026-08-24
+
+### Fixed
+ - Fixed deployment to addon sites via metadata and release.yml
+
+[1.1.0]: https://github.com/dfrezell/LFGRegion/releases/tag/v1.1.0
+
+
 ## [1.0.0] - 2026-08-24
 
 ### Added
