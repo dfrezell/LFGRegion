@@ -9,6 +9,8 @@
 ## Category: Group Finder
 ## X-Category: Group Finder
 ## X-Website: https://github.com/dfrezell/LFGRegion
+## X-Curse-Project-ID: 1667972
+## X-Wago-ID: kGrydYKy
 
 Regions.lua
 Main.lua
