@@ -1,8 +1,15 @@
 package-as: LFGRegion
 
+enable-nolib-creation: no
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
 ignore:
-  - .git
-  - .github
-  - .gitignore
-  - AGENTS.md
   - README.md
+  - AGENTS.md
+  - .gitignore
+  - .github
+  - screenshots
+  - icons
