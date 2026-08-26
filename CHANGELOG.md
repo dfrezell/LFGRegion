@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+ - Screenshots of the addon in 'Start a Group' and 'Find a Group'
+
 ## [1.1.0] - 2026-08-24
 
 ### Fixed
